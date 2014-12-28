@@ -16,7 +16,7 @@
 
 LOCAL_PATH := $(call my-dir)
 
-ifneq ($(filter d2att d2cri d2csp d2lterefreshspr d2mtr d2spr d2tmo d2usc d2vzw,$(TARGET_DEVICE)),)
+ifneq ($(filter d2att d2bst d2cri d2csp d2lterefreshspr d2mtr d2spr d2tmo d2usc d2vzw,$(TARGET_DEVICE)),)
 include $(call all-subdir-makefiles,$(LOCAL_PATH))
 
 FIRMWARE_DSPS_IMAGES := \
@@ -31,7 +31,7 @@ $(FIRMWARE_DSPS_SYMLINKS): $(LOCAL_INSTALLED_MODULE)
 
 ALL_DEFAULT_INSTALLED_MODULES += $(FIRMWARE_DSPS_SYMLINKS)
 
-ifneq ($(filter d2lterefreshspr,$(TARGET_DEVICE)),)
+ifneq ($(filter d2lterefreshspr d2bst,$(TARGET_DEVICE)),)
 
 FIRMWARE_MODEM_IMAGES := \
     modem.b00 modem.b01 modem.b02 modem.b03 modem.b04 modem.b05 modem.b06 modem.b07 modem.b08 \
